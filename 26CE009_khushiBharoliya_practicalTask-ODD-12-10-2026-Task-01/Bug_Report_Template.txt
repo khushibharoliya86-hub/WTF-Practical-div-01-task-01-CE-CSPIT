@@ -1,0 +1,40 @@
+ITUS102 - PRACTICAL EXAMINATION | DEBUGGING AND IMPLEMENTATION REPORT
+Date: 12-10-2026 | Task 01 - Student Fee and Scholarship Planner
+
+Enrollment No.: [Your Enrollment Number]
+Name: [Your Name]
+
+SIMPLE BUGS (write a brief explanation for each)
+Bug | Original problem                          | Correction made                                                                | Why required
+S1  | Typo in href attribute (#calcuator)       | Changed href to "#calculator"                                                  | To allow the in-page navigation link to scroll properly to the calculator section.
+S2  | Generic <div> used for footer info       | Replaced <div> with semantic <footer>                                          | To satisfy HTML5 semantic requirements for site-footer content.
+S3  | Missing colon after "background-color"    | Added ":" between property and value with radial gradient overlay              | CSS syntax requires a colon between property names and values to apply styling rules.
+S4  | Class selector .pageTitle used for an ID  | Changed selector to "#pageTitle" with bold typography & shadow                 | In HTML the element has id="pageTitle", so an ID selector (#) is required to target it.
+S5  | baseFee was read as text string           | Wrapped document value in Number()                                             | Without Number(), tuition and lab fees concatenated as text strings rather than adding numerically.
+S6  | Administration charge used 50% (0.50)     | Changed multiplier to 0.05 (5%)                                               | The policy specifically requires a 5% administration charge on the subtotal.
+
+CODE COMPLETION / IMPLEMENTATION (briefly state what was completed)
+M1: Added <meta charset="UTF-8"> and <meta name="viewport" content="width=device-width, initial-scale=1.0"> inside <head>.
+M2: Added an <aside class="notice"> tag containing <h2>Important Note</h2> and a reminder sentence to check inputs.
+M3: Configured .nav-links with display: flex, justify-content: space-between, pill-shaped tags, and blur effects in style.css.
+M4: Configured .cards using CSS Grid (repeat(2, 1fr)) with 24px gap, modern border-radius, and indigo top accents.
+M5: Added responsive styles in @media (max-width: 600px) setting .cards to 1fr and .nav-links flex-direction to column.
+M6: Implemented calculateDiscount(amount, percentage) returning (amount * percentage) / 100.
+D1: Implemented getRate(type) using if-else returning 20 for Merit, 10 for Sports, and 0 for None.
+D2: Implemented calculateTotal(subtotal, discount, adminCharge) returning subtotal - discount + adminCharge.
+D3: Implemented buildBreakdown(payable, count) using a for loop from semester 1 to count displaying cumulative fees.
+
+FUNCTIONAL TEST
+Test input: Tuition: ₹50,000; Laboratory: ₹2,000; Merit; 2 semesters
+Observed result: Subtotal: ₹52,000 | Discount: ₹10,400 | Administration: ₹2,600 | Payable: ₹44,200 | Semester 2 cumulative fee: ₹88,400
+Mobile layout checked (Yes/No): Yes
+
+GIT VERSION CONTROL
+git log -1 https://github.com/khushibharoliya86-hub/WTF-Practical-div-01-task-01-CE-CSPIT.git
+
+
+
+
+
+
+
